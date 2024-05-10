@@ -7,6 +7,10 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+torchaudio = "^2.3.0"
+audioseal = "^0.1.3"
+ffmpeg-python = "^0.2.0"
+scipy = "^1.13.0"
 
 
 [build-system]
