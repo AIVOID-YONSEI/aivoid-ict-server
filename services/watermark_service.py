@@ -5,10 +5,14 @@ from scipy.io.wavfile import read as wav_read
 from scipy.io.wavfile import write as wav_write
 import ffmpeg
 import io
+import time
+import math
 
 class WatermarkService:
+    CONSTANT = 32768.0
+
     def __get_audio__(self, audio: str) -> tuple[any, int]:
-        binary = b64decode(audio.split(',')[1])
+        binary = b64decode(audio)
         process = (ffmpeg
             .input('pipe:0')
             .output('pipe:1', format='wav')
@@ -30,26 +34,27 @@ class WatermarkService:
         return recorded, simple_rate
 
 
-    def generate_watermarked_audio(self, audio: str) -> torch.Tensor:
+    def generate_watermarked_audio(self, audio: str) -> str:
         recorded, sr = self.__get_audio__(audio)
         model = AudioSeal.load_generator('audioseal_wm_16bits')
-        tmp = torch.tensor(recorded).float() / 32768.0
-        audios = tmp.unsqueeze(0).unsqueeze(0)
-        watermark = model.get_watermark(audios, sample_rate=sr)
-        watermarked_audio = audios + watermark
+        tmp = torch.tensor(recorded).float() / self.CONSTANT
+        tmp = tmp.unsqueeze(0).unsqueeze(0)
+        watermark = model.get_watermark(tmp, sample_rate=sr)
+        watermarked_audio = tmp + watermark
         # Convert watermarked audio to audio file
-        watermarked_audio = watermarked_audio.squeeze().detach().numpy() * 32768.0
+        watermarked_audio = watermarked_audio.squeeze().detach().numpy() * self.CONSTANT
         watermarked_audio = watermarked_audio.astype('int16')
         # Generate a unique output file name
-        output_file = 'watermarked_audio.wav'
+        output_file = f'static/watermarked_audio_{math.ceil(time.time())}.wav'
         wav_write(output_file, sr, watermarked_audio)
 
-        return output_file
+        return '/' + output_file
 
 
     def detect(self, audio: str) -> bool:
         recorded, sr = self.__get_audio__(audio)
+        tmp = torch.tensor(recorded).float() / self.CONSTANT
+        tmp = tmp.unsqueeze(0).unsqueeze(0)
         detector = AudioSeal.load_detector('audioseal_detector_16bits')
-        tmp = torch.tensor(recorded).float() / 32768.0
-        result = detector.detect_watermark(tmp, sample_rate=sr, message_threshold=0.5)
+        result, _ = detector.detect_watermark(tmp, sample_rate=sr, message_threshold=0.5)
         return result >= 0.5
