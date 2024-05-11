@@ -9,32 +9,27 @@ CORS(app)
 
 @app.get("/")
 def root():
-    return {
-        "message": "Hello World"
-    }
+    return {"message": "Hello World"}
+
 
 @app.post("/audio/watermark")
 def generate_watermarked_audio():
-    audio = request.form['audio'] # base64 encoded
+    audio = request.form["audio"]  # base64 encoded
+    audio = audio.split(",")[1] if "," in audio else audio
     watermarkService = WatermarkService()
     path = watermarkService.generate_watermarked_audio(audio=audio)
 
-    return {
-        "message": "success",
-        "path": path
-    }
+    return {"message": "success", "path": path}
+
 
 @app.post("/audio/watermark/detect")
 def detect_watermarked_audio():
-    audio = request.form['audio'] # base64 encoded
+    audio = request.form["audio"]  # base64 encoded
     watermarkService = WatermarkService()
     bool = watermarkService.detect(audio=audio)
 
-    return {
-        "message": "success",
-        "result": bool
-    }
-    
+    return {"message": "success", "result": bool}
+
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=8080)
+    app.run(host="0.0.0.0", port=8080, debug=True)
