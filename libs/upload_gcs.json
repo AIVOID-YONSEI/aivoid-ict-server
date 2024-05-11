@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "axiomatic-robot-423003-b8",
+  "private_key_id": "041dc4c4d77baa4d8b302dd4bc7771fa557149ee",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCSFI7KjuupI3xi\nbAdoIKEjJIzdMS7onw/iWG+FhKxp3HPrPqYbNkuxYP/y7qU69g4FJnjW92pz6ULh\ntpfQ22zzrPJZO6evbZPA/8DhVrmTFnv+zGwdR3hJi/Gfh7RGYQ/80sNwBus29f4W\nzFVUP/kWgb6mgyu6qPff8Fz1HwJBY0EoDc6gh625LUaWdBrDKfc7l5yMLH0qnUwq\n6dQ7IC2MWaFVIqT5ERROLPE7gZ0PCkkUlkx/vetQLIposYFmXgTNKC4QGb8GhECh\nVr1MIBXVsdcs4sshR/VGm0hibHcQrl7B2ZON5q8Lz7UhJS65SiZE08ggAsUrGNvW\nexjq7m3dAgMBAAECggEAFqybN2S0vpWz/mDvS2HZMSfAt6qlMdVStVrtwIdF7c6a\nrZaVWN72I8u/HrmdKwg7R+BfXFqeCuzXhUp+yRvuDuq22VPxpMC48PmhujhoaKTS\nTUv0shzAVoYi1JTPTidNwHwEevSP+QF41ZgU3JVrd+teqODuXjRQ+VEJVMDh7D0c\nJKJEH8Tnz/+Se1Jx6i/7SYRKzhDYh1Tquv7V4RQxCr9llbBy1l+uOf0HU+oYRgVV\niY1ZGtQR6Trc9u0pluGqge3dWHQbw3LK9Z/uEmOqtgxL9GS6CfF2bz54NzZFXiCp\niFkcoquPZB32brBaKUcrOH/n5mUzne8g0xkD3TliXwKBgQDMjr8jCcOlhd0W0Etn\nIjq1BJhQ9JOUmsKTttUk0WNK4ljJj8HBQ6s358qrMnWmTYKukgYdw9K1rRmnAWOg\n1idvBACaewR7CnrL8dBWTGdX9ksC9q++BWKYML5hIBuJ1GdpYF38GHulSZtjvb/+\nXrUc7ms5/umab+LW9ir1A9mWFwKBgQC20Rb798eNnqx+34P1tgBFfIdSRvy2x4KW\niDMDZM20rMkhOmLtYHMyQv6FR1WRwymroCx742MYAluGVTG0HohQaeE35R/UbDZk\nTgKNpUtrJaB74yKE2A+u4cWdA94HoxQ+xt9cuhp+Pz6o7IrNlkep+tBhLOlAMcLn\nXRB77UqIKwKBgQCWmCCvMukOWtbBjOd2LgT6bz+TmftsU+MbzGZujJiE8M5c1bDX\nD3Jl3geesa9bl4S18FsAXsIpbh6MjMFED2VInbG0CQzraHOu4X93iRgr8e6XZ/VJ\n97z2PixqZLDhb7YSJhgLGBsvPFlhvLg0FJVRj1TxhXGFeQmPJ/vIFeWCUQKBgCts\nqQf6yCTEjvaoAwFHVPMsbDxH7llANK2q9msU86O58yB4bO0znslOjoR7+EBiWjCR\nIF/hGDWowbK7482D/x8St1N+kjvz5EuZGBQrMinmSyOCRT3G0JrauATe2Ut5GiL7\nPC0ba5WXUjvvy9yfmLAwinS6pUEBUOmB+ptlNvH3AoGAHDOmd07qpgr6A+3q/7SB\nq2UCjafUb0VfdzRcFT9gEfH2kPOmJD33pvU94LOaE7ax1euWcfkQ4MsyC5qNG4MT\nSvuaix3YyWVH/5D9gF5g9UwgIuxr1n4oyCofPPVokhIza9yIbBX0LJiRPFR4NfbW\nd3ry7ZQ3vp8pEhfpUCSjQXs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "axiomatic-robot-423003-b8@appspot.gserviceaccount.com",
+  "client_id": "106570749068635835608",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/axiomatic-robot-423003-b8%40appspot.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
