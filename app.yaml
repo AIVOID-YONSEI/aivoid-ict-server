@@ -1,3 +1,6 @@
 runtime: python312
-api_version: 1
-entrypoint: poetry install && gunicorn -b :$PORT core.wsgi:application
+entrypoint: gunicorn -b :$PORT core.wsgi:application
+
+handlers:
+  - url: /.*
+    script: auto
