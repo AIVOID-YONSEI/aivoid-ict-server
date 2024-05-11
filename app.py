@@ -25,6 +25,7 @@ def generate_watermarked_audio():
 @app.post("/audio/watermark/detect")
 def detect_watermarked_audio():
     audio = request.form["audio"]  # base64 encoded
+    audio = audio.split(",")[1] if "," in audio else audio
     watermarkService = WatermarkService()
     bool = watermarkService.detect(audio=audio)
 
