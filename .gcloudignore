@@ -38,3 +38,5 @@
 venv
 .vscode
 **pycache**/
+
+static
