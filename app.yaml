@@ -1,5 +1,5 @@
 runtime: python312
-entrypoint: gunicorn -b :$PORT core.wsgi:application
+entrypoint: gunicorn --config gunicorn_config.py app:app
 
 handlers:
   - url: /.*
