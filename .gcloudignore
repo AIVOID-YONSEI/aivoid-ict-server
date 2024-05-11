@@ -39,4 +39,5 @@ venv
 .vscode
 **pycache**/
 
-static
+static/*
+!static/.gitkeep
