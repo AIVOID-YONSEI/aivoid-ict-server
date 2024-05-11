@@ -1,6 +1,7 @@
 .vscode
 
 poetry
+venv
 
 __pycache__
 
